@@ -1,2 +1,7 @@
-<h1>Activitys#index</h1>
-<p>Find me in app/views/activitys/index.html.erb</p>
+<h1> Favorite Activities </h1>
+
+<% @activitys.each do |activity| %>
+  <h2> activity.name </h2>
+  <%= link_to 'Show More', "/activitys_path(activity) %>
+  <%= link_to 'Add New Activity', "/activitys_path(activity) %>
+<% end %>
