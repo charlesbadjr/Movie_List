@@ -1,24 +1,15 @@
 <h1>Create New List: </h1>
 
-<form > 
-  <input  
-    placeholder="ListName"
-    required
-    name="name" 
-    />
-    <textfield 
-    placeholder="Description"
-    name="description"
-
-    />
-    <input
-     placeholder="Link" 
-     name="link"
-
-    />
-    <button  
-      type='submit'
-      color="blue"
-      > Create! 
-      </button
-</form>
+<%= form_for @list do |f| %> 
+  <%= f.label :name %>  
+  <%= f.text_field %>
+  <br />
+  <%= f.label :description %>  
+  <%= f.text_area :description %>
+  <br />
+  <%= f.label :link %>
+  <%= f.text_field :link %> 
+  <br /> 
+    <%= f.submit Create! %> 
+      
+<% end %>
