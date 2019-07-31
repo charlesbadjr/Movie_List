@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item: MyString
+  description: MyText
+  priority: 1
+  purchased: false
+
+two:
+  item: MyString
+  description: MyText
+  priority: 1
+  purchased: false
