@@ -1,2 +1,29 @@
-<h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+<h1>Movie Watch List</h1>
+
+
+<table>
+  <tr>
+    <th> Title </th>
+    <th> Description </th>
+    <th> Rating </th>
+  </tr>
+
+     @movies.each do |movie|    
+  <tr>
+     <td <%= link_to movie.title, movie %> </td>
+     <td <%= link_to movie.description, movie %> </td>
+     <td <%= link_to movie.rating, movie %> </td>
+     <td <%= link_to Delete Movie, movie, method: destroy: Are you sure? %> </td>
+     <td <%= link_to Change Rating, edit_movie_path(movie) %> </td>
+   </tr>
+   <% end %>
+
+   <%  if @movies.size == 0  %>    
+      <em> I'm sorry No Movies to Display </em>
+   <% end %>
+
+  </table>  
+  
+  <span> <%= link_to Add Movie to List, new_movie_path %> </span>
+  <span> <%= link_to Go Back to Lists, list_path %> </span>
+

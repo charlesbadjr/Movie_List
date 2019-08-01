@@ -1,7 +1,28 @@
-<h1> My Chore List: </h1>
+<h1>My Chore List</h1>
 
-<% @activitys.each do |activity| %>
-  <h2> activity.name </h2>
-  <%= link_to 'Show More', "/activitys_path(activity) %>
-  <%= link_to 'Add New Activity', "/activitys_path(activity) %>
-<% end %>
+
+<table class="block" >
+  <tr>
+    <th> Title </th>
+    <th> Description </th>
+    <th> Rating </th>
+  </tr>
+
+     @activitys.each do |activitys|    
+  <tr>
+     <td <%= link_to activitys.todo, '/activitys/edit' %> </td>
+     <td <%= link_to movie.description, movie %> </td>
+     <td <%= link_to movie.rating, movie %> </td>
+     <td <%= link_to Delete Movie, movie, method: destroy: Are you sure? %> </td>
+     <td <%= link_to Change Rating, edit_movie_path(movie) %> </td>
+   </tr>
+   <% end %>
+
+   <%  if @activitys.size == 0  %>    
+      <em> I'm sorry Im lazy. Care to add something to my list? </em>
+   <% end %>
+
+  </table>  
+  
+  <span> <%= link_to Add activity to List, new_movie_path %> </span>
+  <span> <%= link_to Go Back to Lists, list_path %> </span>
