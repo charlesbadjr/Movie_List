@@ -1,2 +1,11 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<h1> Lists to Choose from: </h1>
+
+  <ul>
+    <% @lists.each do |list| %>
+      <li> <%= list.name, list.description, list.link %> </li>
+  </ul>   
+      <span> <%= link_to 'Go To List', list_path:id %> </span>
+   <% end %>
+
+  <%= link_to 'Create New List', new_list_path  %>
+

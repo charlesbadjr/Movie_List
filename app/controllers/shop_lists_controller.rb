@@ -1,11 +1,12 @@
 class ShopListsController < ApplicationController
   
   def index
-  
+   @shoplist = Shoplists.all 
+
   end
 
-  def show
-  
+  def new
+    @shoplist = Shoplists.new
   end
 
   def create
@@ -18,11 +19,14 @@ class ShopListsController < ApplicationController
     end
   end
 
+  def update
 
-  def new
-  
   end
 
+  def show
+
+  end
+  
   private
 
   def shop_params

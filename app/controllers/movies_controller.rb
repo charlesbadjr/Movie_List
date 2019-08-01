@@ -5,13 +5,23 @@ class MoviesController < ApplicationController
 
   end
 
-  def show
-  
+  def new
+   @movie = Movies.new
+   
   end
 
-  def new
-   @movie = Movies.new(params)
-   
+  def show
+
+  end
+
+  def update
+
+  end
+
+  private
+
+  def movie_params
+   params.require(movie).permit(:name :rating :something)
   end
 
 end

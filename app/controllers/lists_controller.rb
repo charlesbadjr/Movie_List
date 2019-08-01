@@ -4,30 +4,41 @@ class ListsController < ApplicationController
     @lists = List.all
   end
 
+  def new
+    @lists = List.new
+  end
+
+
   def create
     @lists = List.new(list_params)
     if list.save
-      render json: list
+      redirect_to @lists
     else
-      render json: { errors: list.errors }, status: :unprocessable_entity 
+      render json: { errors: List.errors }, status: :unprocessable_entity 
     end
+  end
+
+  def show
+    @lists = List.all
+      render json: lists
   end
 
   def update
     lists = List.find(params[:id])
-    list.update(complete: !list.complete)
-    render json: list  
+    lists.update(name: !List.name)
+    render json: lists  
   end
 
   def destroy
-    List.find(params[:id]).destroy
+    @lists = List.find(params[:id]).destroy
     render json: { message: 'List deleted' }
+  
   end
 
   private
 
   def list_params
-    params.require(:list).permit(:name, :complete)
+    params.require(:list).permit(:name, :description, :link )
   end
 
 end

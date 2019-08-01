@@ -5,14 +5,20 @@ class ActivitysController < ApplicationController
 
   end
 
-  def show
-    @activitys =Activity.find(params[:id])
-
-  end
-
   def new
    @activitys = Activity.new
 
   end
 
+  def show
+    @activitys =Activity.find(params[:id])
+
+  end
+
+  private
+     
+     def activitys_params
+      params.require(:activitys).permit(:todo, :description, :rating )
+
+     end
 end
