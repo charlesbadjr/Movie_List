@@ -8,13 +8,15 @@
     <th> Rating </th>
   </tr>
 
-     @movies.each do |movie|    
+   <%  @movies.each do |movie| %>    
   <tr>
-     <td <%= @movie.title %> </td>
-     <td <%= @movie.description %> </td>
-     <td <%= @movie.rating  %> </td>
+     <td <%= movie.title %> </td>
+     <td <%= movie.description %> </td>
+     <td <%= movie.link %> </td>
+     <td <%= movie.watched %> </td>
+     <td <%= movie.rating  %> </td>
      <td <%= link_to Delete Movie, movie, method: destroy: Are you sure? %> </td>
-     <td <%= link_to Change Rating, edit_movie_path(movie) %> </td>
+     <td <%= link_to Change Rating, edit_movie_path(:id) %> </td>
    </tr>
    <% end %>
 

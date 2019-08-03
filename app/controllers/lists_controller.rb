@@ -11,7 +11,7 @@ class ListsController < ApplicationController
 
   def create
     @lists = List.new(list_params)
-    if list.save
+    if List.save
       redirect_to @lists
     else
       render json: { errors: List.errors }, status: :unprocessable_entity 
@@ -24,9 +24,9 @@ class ListsController < ApplicationController
   end
 
   def update
-    lists = List.find(params[:id])
+    @lists = List.find(params[:id])
     lists.update(name: !List.name)
-    render json: lists  
+    render json: @lists  
   end
 
   def destroy

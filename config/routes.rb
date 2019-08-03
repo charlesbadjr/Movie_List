@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-    root 'lists#index'
-    
+    root 'static_pages#home'
+
+  resources :static_pages
   resources :lists
   resources :movies
   resources :activitys
   resources :shoplists
-  
+
     ##get '/movies', to: 'movies#show'
   
 

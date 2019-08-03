@@ -1,5 +1,24 @@
-<h1>Movies#new</h1>
+<h1>Movies To Watch </h1>
 
-<%= form_for @movie do |f| %>
-<%= f.submit %>
-<% end %>
+     <div class="row">
+        <div class="col-xs-12 col-md-8" >
+		 <%= form_for @movie do |f| %> 
+         <%= f.label "Movie Title" %>  
+         <%= f.text_field :title autofocus: true, required: true %>
+         <br />
+         <%= f.label "Description" %>  
+         <%= f.text_area :description %>
+           <br />
+         <%= f.label "List Link" %>
+         <%= f.text_field :link %> 
+          <br /> 
+          <%= f.label "Have you seen the movie?" %>
+         <%= f.text_field :watched %>
+         <br />
+         <%= f.label "Stars" %>
+         <%= f.text_field :rating %>
+         <%= f.submit "Create" %> 
+         <% end %>
+	 </div>
+	  </div>
+
