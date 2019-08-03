@@ -1,23 +1,22 @@
-   <section class="hero-area">
+ <section class="hero-area">
 	<div class="block">
 		<h1> Enter The Charlie Experience </h1>
-		<p>This site made exclusivly by and for Charlie. These are my interests my hobies and chores that need doing. Great way for Charlie to stay on track! </p>
-		
-		<%= link_to 'See Lists", lists_path "
-		<span> or </span>
-		<%= link_to 'Create New List', new_list_path  %>
-		
+		<h4>This site made exclusivly by and for Charlie. These are my interests my hobies and chores that need doing. Great way for Charlie to stay on track! </h4>
+		<div >
+		  <p> <%= link_to 'See Lists", lists_path " </p>
+		  <span> or </span>
+		  <p> <%= link_to 'Create New List', new_list_path  %> </p>
+		</div>
 	</div>
-	  </div>
-</section>
-	    <h1> Lists to Choose from: </h1>
+ </section>
+   <h1> Lists to Choose from: </h1>
+     <div >  
         <ul>
            <% @lists.each do |list| %>
               <li> <%= list.name %> </li>
          </ul>   
         <% end %>
       <span> <%= link_to 'Go To List', lists_path %> </span>
+      <%= link_to 'Create New List', new_list_path  %>
+	 </div>
 
-  <%= link_to 'Create New List', new_list_path  %>
-	  </div>
-</section>
