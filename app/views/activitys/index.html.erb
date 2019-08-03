@@ -3,18 +3,20 @@
 
 <table class="block" >
   <tr>
-    <th> Title </th>
+    <th> Name </th>
     <th> Description </th>
-    <th> Rating </th>
+    <th> Fun Level </th>
+    <th> Complete </th>
   </tr>
 
      @activitys.each do |activitys|    
   <tr>
-     <td <%= link_to activitys.todo, '/activitys/edit' %> </td>
-     <td <%= link_to movie.description, movie %> </td>
-     <td <%= link_to movie.rating, movie %> </td>
-     <td <%= link_to Delete Movie, movie, method: destroy: Are you sure? %> </td>
-     <td <%= link_to Change Rating, edit_movie_path(movie) %> </td>
+     <td <%= link_to @activitys.name, activity_path(activity[:id]) %> </td>
+     <td <%= @activitys.description %> </td>
+     <td <%= @activitys.funlevel %> </td>
+     <td <%= @activitys.complete %> </td>
+     
+     <td <%= link_to Change Complete, edit_activity_path(activity) %> </td>
    </tr>
    <% end %>
 
@@ -24,5 +26,5 @@
 
   </table>  
   
-  <span> <%= link_to Add activity to List, new_movie_path %> </span>
-  <span> <%= link_to Go Back to Lists, list_path %> </span>
+  <span> <%= link_to Add activity to List, new_activity_path %> </span>
+  

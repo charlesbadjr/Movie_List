@@ -10,9 +10,9 @@
 
      @movies.each do |movie|    
   <tr>
-     <td <%= link_to movie.title, movie %> </td>
-     <td <%= link_to movie.description, movie %> </td>
-     <td <%= link_to movie.rating, movie %> </td>
+     <td <%= @movie.title %> </td>
+     <td <%= @movie.description %> </td>
+     <td <%= @movie.rating  %> </td>
      <td <%= link_to Delete Movie, movie, method: destroy: Are you sure? %> </td>
      <td <%= link_to Change Rating, edit_movie_path(movie) %> </td>
    </tr>

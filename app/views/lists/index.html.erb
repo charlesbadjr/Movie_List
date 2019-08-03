@@ -3,9 +3,9 @@
 		<h1> Enter The Charlie Experience </h1>
 		<p>This site made exclusivly by and for Charlie. These are my interests my hobies and chores that need doing. Great way for Charlie to stay on track! </p>
 		
-		<%= link_to 'See Lists", ('lists_path') "
+		<%= link_to 'See Lists", lists_path "
 		<span> or </span>
-		<%= link_to 'Create New List', ('new_list_path')  %>
+		<%= link_to 'Create New List', new_list_path  %>
 		
 	</div>
 	  </div>
@@ -16,8 +16,8 @@
               <li> <%= list.name %> </li>
          </ul>   
         <% end %>
-      <span> <%= link_to 'Go To List', ('list_path') %> </span>
+      <span> <%= link_to 'Go To List', lists_path %> </span>
 
-  <%= link_to 'Create New List', 'new_list_path'  %>
+  <%= link_to 'Create New List', new_list_path  %>
 	  </div>
 </section>

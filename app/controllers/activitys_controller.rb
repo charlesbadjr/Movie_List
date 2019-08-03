@@ -10,15 +10,24 @@ class ActivitysController < ApplicationController
 
   end
 
+  def create
+    
+  end
+
   def show
-    @activitys =Activity.find(params[:id])
+    @activitys = Activity.find(params[:id])
+
+  end
+
+  def delete
+     @activitys = Activity.destroy(params[:id])
 
   end
 
   private
      
      def activitys_params
-      params.require(:activitys).permit(:todo, :description, :rating )
-
+      params.require(:activitys).permit(:name, :description, :funlevel, :complete )
      end
+
 end
