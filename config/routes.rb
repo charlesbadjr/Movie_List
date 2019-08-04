@@ -2,6 +2,7 @@ Rails.application.routes.draw do
     root 'static_pages#home'
 
   resources :static_pages
+    get '/about', to: 'static_pages#about', as: 'about/charlie'
   resources :lists
   resources :movies
   resources :activitys

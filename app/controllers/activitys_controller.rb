@@ -11,7 +11,12 @@ class ActivitysController < ApplicationController
   end
 
   def create
-    
+    @activitys = Activity.new(activitys_params)
+    if activitys.save
+      redirect_to @activitys
+    else
+      render json: { errors: Activity.errors }, status: :unprocessable_entity 
+    end
   end
 
   def show
