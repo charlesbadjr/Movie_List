@@ -11,7 +11,7 @@ class ListsController < ApplicationController
 
   def create
     @lists = List.new(list_params)
-    if List.save
+    if @lists.save
       redirect_to @lists
     else
       render json: { errors: List.errors }, status: :unprocessable_entity 
@@ -20,7 +20,7 @@ class ListsController < ApplicationController
 
   def show
     @lists = List.all
-      render json: lists
+      render json: @lists
   end
 
   def update
