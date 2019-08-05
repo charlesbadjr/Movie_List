@@ -20,7 +20,7 @@ class ListsController < ApplicationController
 
   def show
     @lists = List.all
-      render json: @lists
+     render json: @lists
   end
 
   def update

@@ -15,8 +15,7 @@
      <td <%= movie.link %> </td>
      <td <%= movie.watched %> </td>
      <td <%= movie.rating  %> </td>
-     <td <%= link_to Delete Movie, movie, method: destroy: Are you sure? %> </td>
-     <td <%= link_to Change Rating, edit_movie_path(:id) %> </td>
+     
    </tr>
    <% end %>
 
@@ -26,6 +25,10 @@
 
   </table>  
   
-  <span> <%= link_to Add Movie to List, new_movie_path %> </span>
-  <span> <%= link_to Go Back to Lists, list_path %> </span>
+  <span> <%= link_to "Add Movie to List", new_movie_path %> </span>
+  <span> <%= link_to "Go Back to Lists", lists_path %> </span>
 
+<%  ## can use these for the delete actions in table: %>
+<%   ##  <td <%= link_to Delete Movie, edit_movie_path%> </td> %>
+<%   ##  <td <%= link_to Change Rating, edit_movie_path(:id) %> </td> %>
+<% end %>

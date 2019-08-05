@@ -11,7 +11,6 @@ class ShopListsController < ApplicationController
 
   def create
     @shoplist = Shoplists.new(shoplist.params)
-    
     if @shoplist.save
       redirect_to shoplist_path(@shoplist)
     else
@@ -24,6 +23,8 @@ class ShopListsController < ApplicationController
   end
 
   def show
+   @shoplist = ShopLists.find(params[:id])
+   render json: @shoplist([:id])
 
   end
   

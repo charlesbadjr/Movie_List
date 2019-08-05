@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
 
   def create
     @movies = Movie.create(movies_params[:id])
-     if movies.save
+     if @movies.save
        render json: movies
       else
       redirect_to index
