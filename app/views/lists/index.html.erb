@@ -3,12 +3,13 @@
      <div >
       <h1> Lists to Choose from: </h1>  
          <% @lists.each do |l| %>
-         <ul>
-              <li> <%= l.name %> </li>
+         <ul >
+              <li> <%= l.name %> : <%=  l.description %> 
+              <br />  
+                 <%= link_to l.link, l.link %> </li>
          </ul>   
         <% end %>
-      <span> <%= link_to 'Go To List', lists_path(:id) %> </span>
-      <%= link_to 'Create New List', new_list_path  %>
+
 	 </div>
 	<div class="block">
 		<a data-scroll href="#lists_show" class="btn btn-transparent">See Lists</a>
