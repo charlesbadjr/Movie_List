@@ -5,14 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
-    <% javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto:300,400,700|Material+Icons" %>
-    
   </head>
 
   <body>
-    <%= render 'layouts/navBar' %>
-      <%= yield %>
-    <h3> Built with Coffee </h3> 
+   <div class="ui container">
+      <%= render 'layouts/navBar' %>
+        <%= yield %>
+      <h3> Built with Coffee </h3>
+    </div> 
   </body>
 </html>

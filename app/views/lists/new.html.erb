@@ -1,19 +1,19 @@
     
 
- <div class="row">
+ <div >
      <h1> Create A New List: </h1>
-     <div class="col-xs-12 col-md-8" >
-		 <%= form_for @lists do |f| %> 
-         <%= f.label "List Name" %>  
+     <div class="ui form" >
+		   <%= form_for @lists do |f| %> 
+         <%= f.label "List Name"  %>  
            <%= f.text_field :name, :required => true, autofocus: true %>
            <br />
-         <%= f.label "Description" %>  
+         <%= f.label "Description"  %>  
            <%= f.text_area :description, :required => true %>
            <br />
-         <%= f.label "List Link" %>
+         <%= f.label "List Link"  %>
            <%= f.text_field :link, :required => true %> 
            <br /> 
-         <%= f.submit "Create" %> 
+         <%= f.submit "Create", class: 'ui button primary' %> 
       <% end %>
    </div>
 </div>

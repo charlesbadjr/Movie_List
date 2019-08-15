@@ -1,10 +1,10 @@
 <div>
 
-<h1>Movie Watch List</h1>
+<h1 class="center aligned">Movie Watch List</h1>
 
-<table id="movietable" >
+<table id="movietable" class="ui striped right aligned table" >
  <thead>
-  <tr>
+  <tr >
     <th> Title </th>
     <th> Description </th>
     <th> Link </th>
@@ -15,7 +15,7 @@
   
  <tbody>
     <%  @movies.each do |m| %>
-  <tr>  
+  <tr  >  
      <td> <%= m.title %> </td>
      <td> <%= m.description %> </td>
      <td> <%= m.link %> </td>

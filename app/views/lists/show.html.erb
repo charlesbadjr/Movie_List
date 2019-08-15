@@ -1,5 +1,7 @@
 <h1> Lists to Choose from: </h1>
   
+<p id="notice" class=<%= notice ? 'success' : ''%>> <%= notice %> </p>
+
   <% @list.each do |list| %>
   <ul>
       <li> <%= list.name %> 

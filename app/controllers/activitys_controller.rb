@@ -20,13 +20,13 @@ class ActivitysController < ApplicationController
   end
 
   def show
-    @activitys = Activity.find(params[:id])
+    @activitys = Activity.find(activitys_params[:id])
      render json: activitys([:id])
      
   end
 
   def delete
-     @activitys = Activity.destroy(params[:id])
+     @activitys = Activity.destroy(activitys_params[:id])
 
   end
 

@@ -10,7 +10,7 @@
       <th> Complete </th>
     </tr>
    <tr>
-      <td <%= link_to @activitys.name, activity_path(activity[:id]) %> </td>
+      <td <%= @activitys.name %> </td>
       <td <%= @activitys.description %> </td>
       <td <%= @activitys.funlevel %> </td>
       <td <%= @activitys.complete %> </td> 
@@ -19,11 +19,11 @@
      <% end %>
 
        <%  if @activitys.size == 0  %>    
-        <em> "I'm sorry Im lazy. Care to add something to my list? " </em>
+        <em> I'm sorry Im lazy. Care to add something to my list? </em>
        <% end %>
 
    </table>  
 </div >
 <div >
-  <span> <%= link_to "Add activity to List", new_activity_path %> </span>
+  <span> <%= link_to "Add Chore to List", new_activity_path %> </span>
 </div>
