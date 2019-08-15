@@ -2,19 +2,17 @@ class MoviesController < ApplicationController
   # before_action
   
   def index
-    @movies = Movie.all 
-      
+    @movies = Movie.all  
   end
 
   def new
    @movies = Movie.new
-   
   end
 
   def create
     @movies = Movie.create(movies_params[:id])
      if @movies.save
-       render json: movies
+       render json: @movies
       else
       redirect_to index
     end
@@ -40,7 +38,7 @@ class MoviesController < ApplicationController
   private
 
   def movies_params
-   params.require(movie).permit(:title, :description, :link, :watched, :rating )
+   params.require(:movie).permit(:title, :description, :link, :watched, :rating )
   end
 
 end

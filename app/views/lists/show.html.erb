@@ -1,11 +1,12 @@
 <h1> Lists to Choose from: </h1>
-
+  
+  <% @list.each do |list| %>
   <ul>
-    <% @list.each do |list| %>
-      <li> <%= list.name %> </li>
+      <li> <%= list.name %> 
+            <%= link_to 'Delete List', list_path, are you sure?  %>
+      </li>
   </ul>   
-      <span> <%= link_to 'Go To List', list_path:id %> </span>
-   <% end %>
-
-  <%= link_to 'Delete List', list_path, are you sure?  %>
+  <% end %>   
+  <span> <%= link_to 'Go To List', list_path:id %> </span>
+  
 

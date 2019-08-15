@@ -1,13 +1,13 @@
-<h1>ShopLists#index</h1>
-
-<table class="table" >
+<div >
+  <h1>Shoping List</h1>
+  <%  @shoplists.each do |shoplist| %>
+<table class="shoptable" >
   <tr>
     <th> Item </th>
     <th> Gift </th>
     <th> Link </th>
   </tr>
-
-   <%  @shoplist.each do |shoplist| %>    
+    
   <tr>
      <td <%= shoplist.item %> </td>
      <td <%= shoplist.gift %> </td>
@@ -15,8 +15,10 @@
    </tr>
    <% end %>
 
-   <%  if @shoplist.size == 0  %>    
-      <em> I'm sorry No Items to Display </em>
+   <%  if @shoplists.size == 0  %>    
+      <em> "Im sorry No Items to Display" </em>
    <% end %>
 
-  </table>  
+</table>
+  
+</div >

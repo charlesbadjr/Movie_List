@@ -1,18 +1,18 @@
 class ShopListsController < ApplicationController
   
   def index
-   @shoplist = Shoplists.all 
+   @shoplists = ShopList.all 
 
   end
 
   def new
-    @shoplist = Shoplists.new
+    @shoplists = ShopList.new
   end
 
   def create
-    @shoplist = Shoplists.new(shoplist.params)
-    if @shoplist.save
-      redirect_to shoplist_path(@shoplist)
+    @shoplists = ShopList.new(shop_params)
+    if @shoplists.save
+      redirect_to shoplist_path(@shoplists)
     else
       render :new
     end
@@ -23,15 +23,15 @@ class ShopListsController < ApplicationController
   end
 
   def show
-   @shoplist = ShopLists.find(params[:id])
-   render json: @shoplist([:id])
+   @shoplists = ShopList.find(params[:id])
+   render json: @shoplists([:id])
 
   end
   
   private
 
   def shop_params
-    params.require(:shoplist).permit(:item, :gift, :link)
+    params.require(:shoplists).permit(:item, :gift, :link)
   end
 
 

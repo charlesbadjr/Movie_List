@@ -1,34 +1,36 @@
+<div>
+
 <h1>Movie Watch List</h1>
 
-
-<table>
+<table id="movietable" >
+ <thead>
   <tr>
     <th> Title </th>
     <th> Description </th>
+    <th> Link </th>
+    <th> Watched </th>
     <th> Rating </th>
   </tr>
-
-   <%  @movies.each do |movie| %>    
-  <tr>
-     <td <%= movie.title %> </td>
-     <td <%= movie.description %> </td>
-     <td <%= movie.link %> </td>
-     <td <%= movie.watched %> </td>
-     <td <%= movie.rating  %> </td>
-     
-   </tr>
-   <% end %>
-
-   <%  if @movies.size == 0  %>    
-      <em> I'm sorry No Movies to Display </em>
-   <% end %>
-
-  </table>  
+ </thead>
   
+ <tbody>
+    <%  @movies.each do |m| %>
+  <tr>  
+     <td> <%= m.title %> </td>
+     <td> <%= m.description %> </td>
+     <td> <%= m.link %> </td>
+     <td> <%= m.watched %> </td> 
+     <td> <%= m.rating %> </td>
+  </tr>   
+  <% end %>
+  <%  if @movies.length == 0 %> 
+  <em> Im sorry No Movies to Display </em>
+  <% end %>
+  </tbody>
+  </table>  
+</div>
+<div>
   <span> <%= link_to "Add Movie to List", new_movie_path %> </span>
   <span> <%= link_to "Go Back to Lists", lists_path %> </span>
+</div>
 
-<%  ## can use these for the delete actions in table: %>
-<%   ##  <td <%= link_to Delete Movie, edit_movie_path%> </td> %>
-<%   ##  <td <%= link_to Change Rating, edit_movie_path(:id) %> </td> %>
-<% end %>

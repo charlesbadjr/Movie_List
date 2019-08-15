@@ -1,30 +1,29 @@
-<h1>My Chore List</h1>
 
+<div >
+  <h1>My Chore List</h1>
+    <% @activitys.each do |activitys|   %>  
+  <table class="block" >
+    <tr>
+      <th> Name </th>
+      <th> Description </th>
+      <th> Fun Level </th>
+      <th> Complete </th>
+    </tr>
+   <tr>
+      <td <%= link_to @activitys.name, activity_path(activity[:id]) %> </td>
+      <td <%= @activitys.description %> </td>
+      <td <%= @activitys.funlevel %> </td>
+      <td <%= @activitys.complete %> </td> 
+      <td <%= link_to "Change Complete", edit_activity_path(activity) %> </td>
+    </tr>
+     <% end %>
 
-<table class="block" >
-  <tr>
-    <th> Name </th>
-    <th> Description </th>
-    <th> Fun Level </th>
-    <th> Complete </th>
-  </tr>
+       <%  if @activitys.size == 0  %>    
+        <em> "I'm sorry Im lazy. Care to add something to my list? " </em>
+       <% end %>
 
-     @activitys.each do |activitys|    
-  <tr>
-     <td <%= link_to @activitys.name, activity_path(activity[:id]) %> </td>
-     <td <%= @activitys.description %> </td>
-     <td <%= @activitys.funlevel %> </td>
-     <td <%= @activitys.complete %> </td>
-     
-     <td <%= link_to Change Complete, edit_activity_path(activity) %> </td>
-   </tr>
-   <% end %>
-
-   <%  if @activitys.size == 0  %>    
-      <em> I'm sorry Im lazy. Care to add something to my list? </em>
-   <% end %>
-
-  </table>  
-  
-  <span> <%= link_to Add activity to List, new_activity_path %> </span>
-  
+   </table>  
+</div >
+<div >
+  <span> <%= link_to "Add activity to List", new_activity_path %> </span>
+</div>

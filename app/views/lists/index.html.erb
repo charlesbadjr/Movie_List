@@ -3,10 +3,11 @@
      <div >
       <h1> Lists to Choose from: </h1>  
          <% @lists.each do |l| %>
-         <ul >
+         <ul id="listUL" class="list">
               <li> <%= l.name %> : <%=  l.description %> 
-              <br />  
-                 <%= link_to l.link, l.link %> </li>
+                        <br />  
+                   <%= link_to l.link, l.link %> 
+              </li>
          </ul>   
         <% end %>
 
