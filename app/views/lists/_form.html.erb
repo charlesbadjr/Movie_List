@@ -1,2 +1,26 @@
-<% if list.errors.any? %>
+   <% if list.errors.any? %>
   <div id="notice" class="error">
+     
+  </div>
+  
+  <h1> Create A New List: </h1>
+  <div class="ui_form" >
+      <%= form_for @lists do |f| %> 
+     <div class="feild"> 
+        <%= f.label "List Name"  %>  
+        <br />
+        <%= f.text_field :name, :required => true, autofocus: true %>
+     </div>
+     <div class="feild">
+        <%= f.label "Description"  %>  
+        <br />  
+        <%= f.text_area :description, :required => true %>
+     </div> 
+     <div class="feild"> 
+        <%= f.label "List Link"  %>
+          <br />  
+        <%= f.text_field :link, :required => true %> 
+     </div>
+        <%= f.submit "Create", class: 'ui button primary' %> 
+     <% end %>
+  </div>

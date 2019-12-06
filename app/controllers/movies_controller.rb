@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
      if @movies.save
        render json: @movies
       else
-      redirect_to index
+      render json: {errors: Movie.errors }, status: :unprocessable_entity
     end
   end
 

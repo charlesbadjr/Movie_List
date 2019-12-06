@@ -6,6 +6,7 @@ class ListsController < ApplicationController
 
   def new
     @lists = List.new
+    render partial: "form"
   end
 
 
@@ -19,8 +20,6 @@ class ListsController < ApplicationController
   end
 
   def show
-    @lists = List.all
-     render json: @lists
   end
 
   def update
